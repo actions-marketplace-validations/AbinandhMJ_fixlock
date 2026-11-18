@@ -10,7 +10,7 @@
 #       steps:
 #         - uses: actions/checkout@v4
 #           with: { fetch-depth: 0 }
-#         - uses: AbinandhMJ/fixlock@v0.8.0
+#         - uses: AbinandhMJ/fixlock@v0.9.0
 name: fixlock by Algotricz
 description: Stop AI coding assistants and teammates from silently undoing bug fixes. Fails the PR until the fix owner approves.
 author: Algotricz
@@ -87,7 +87,7 @@ runs:
         exit $status
     - name: PR comment
       if: always() && inputs.comment == 'true' && github.event.pull_request.number && steps.check.outputs.markdown != ''
-      uses: marocchino/sticky-pull-request-comment@v2
+      uses: marocchino/sticky-pull-request-comment@v3
       with:
         header: fixlock
         path: ${{ steps.check.outputs.markdown }}

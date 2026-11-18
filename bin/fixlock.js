@@ -22,6 +22,9 @@ See it first:
   fixlock demo [--keep] [--fast]       60-second walkthrough in a throwaway repo (nothing in your projects is touched)
 
 Setup (team lead, once):
+  fixlock quickstart [--no-ci] [--no-locks] [--no-git-hooks]
+                                       Everything in one go, no questions: team, AI assistants, hooks, locks for
+                                       the past fixes fixlock is surest about, and the GitHub PR check
   fixlock init                         Interactive: team, roles, GitHub users, policies, tracker, hooks
   fixlock team [list|add|remove]       Manage members: team add --name Abi --github abinandhmj --email a@x.com --role lead
 
@@ -46,6 +49,8 @@ Daily:
   fixlock languages [file]             Languages structural matching understands (and which one a file is)
   fixlock why <file>[:line]            What is locked here, who owns it, can I change it?
   fixlock list | remove <id>
+  fixlock status [file] [--stdin] [--json]
+                                       Every lock and whether it's intact (--stdin: check unsaved editor text). For editor plugins
 
 CI / hooks:
   fixlock check [--base origin/main] [--pr N] [--notify] [--markdown out.md] [--json]
